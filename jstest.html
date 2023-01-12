@@ -8,26 +8,16 @@
     <title>Document</title>
     <script>
         alert("我的第一个 JavaScript");
-        </script>
+    </script>
+    <script src="js/myscript.js"></script>
     <script>
         document.write("<h1>这是一个标题</h1>");
         document.write("<p>这是一个段落。</p>");
-
-
-        function changeImage() {
-            element = document.getElementById('pic_bulboff_img')
-            if (element.src.match("bulbon")) {
-                element.src = "/images/pic_bulboff.gif";
-            }
-            else {
-                element.src = "/images/pic_bulbon.gif";
-            }
-        }
-
-        function buttonClick(tips){
+        function buttonClick(tips) {
             alert(tips);
         }
     </script>
+
 </head>
 
 <body>
@@ -38,7 +28,25 @@
             <img decoding="async" loading="lazy" id="pic_bulboff_img" onclick="changeImage()"
                 src="/images/pic_bulboff.gif" width="100" height="180">
         </div>
+        <button onclick="this.innerHTML=Date()">现在的时间是?</button>
     </div>
+
+    <div>
+        <p>回调函数等待 3 秒后执行。</p>
+        <p id="demo"></p>
+
+        <p>主线程并没有停止</p>
+        <p id="demo2"></p>
+
+        <script>
+            setTimeout(function () {
+                document.getElementById("demo").innerHTML = "RUNOOB!";
+            }, 3000);
+    
+            document.getElementById("demo2").innerHTML = "RUNOOB-2!";
+        </script>
+    </div>
+
 </body>
 
 </html>

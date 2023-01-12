@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        #demo {
+            background-color: aquamarine;
+        }
+    </style>
+</head>
+
+<body>
+
+    <p><strong>以下内容是通过异步请求获取的：</strong></p>
+    <p id="demo"></p>
+    <script>
+        var xhr = new XMLHttpRequest();
+
+        xhr.onload = function () {
+            // 输出接收到的文字数据
+            document.getElementById("demo").innerHTML = xhr.responseText;
+            console.log('onload method,responseText= ' + xhr.responseText)
+            console.log(xhr)
+            var resultJson = JSON.parse(xhr.responseText)
+            console.log("resultJson>>>" + JSON.stringify(resultJson))
+            console.log("resultJson.sites>>>" + JSON.stringify(resultJson.sites))
+            console.log("resultJson.sites element >>>" + JSON.stringify(resultJson.sites[0]))
+
+            for (var i = 0; i < resultJson.sites.length; i++) {
+                console.log(JSON.stringify(resultJson.sites[i]))
+                console.log(resultJson.sites[i].name)
+                console.log(resultJson.sites[i].url)
+            }
+
+        }
+
+        xhr.onerror = function () {
+            document.getElementById("demo").innerHTML = "请求出错";
+        }
+        xhr.onprogress = function (ev) {
+            console.log(ev)
+        }
+
+        // 发送异步 GET 请求
+        xhr.open("GET", "txt/test.json", true);
+        xhr.send();
+    </script>
+</body>
+
+</html>
