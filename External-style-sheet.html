@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <!-- 外部样式表 -->
+    <link rel="stylesheet" type="text/css" href="css/External-style-sheet.css">
+
+    <!-- 内部样式表 -->
+    <style>
+        p.inner {
+            background-color: aqua;
+        }
+
+        div.inner {
+            background-color: aqua;
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <h1>外部样式表</h1>
+        <p class="extener">当样式需要应用于很多页面时，外部样式表将是理想的选择。在使用外部样式表的情况下，你可以通过改变一个文件来改变整个站点的外观。每个页面使用
+            &lt;link&gt; 标签链接到样式表。
+            &lt;link&gt; 标签在（文档的）头部：
+        </p>
+    </div>
+
+    <div>
+        <h1>内部样式表</h1>
+        <p class="inner">当单个文档需要特殊的样式时，就应该使用内部样式表。你可以使用 &lt;style&gt; 标签在文档头部定义内部样式表
+        </p>
+    </div>
+    <!-- 内联样式 -->
+    <div>
+        <p style="color:sienna;margin-left:20px">这是一个段落。</p>
+    </div>
+</body>
+
+</html>

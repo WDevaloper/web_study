@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        alert("我的第一个 JavaScript");
+        </script>
+    <script>
+        document.write("<h1>这是一个标题</h1>");
+        document.write("<p>这是一个段落。</p>");
+
+
+        function changeImage() {
+            element = document.getElementById('pic_bulboff_img')
+            if (element.src.match("bulbon")) {
+                element.src = "/images/pic_bulboff.gif";
+            }
+            else {
+                element.src = "/images/pic_bulbon.gif";
+            }
+        }
+
+        function buttonClick(tips){
+            alert(tips);
+        }
+    </script>
+</head>
+
+<body>
+    <div>
+        <div> <button id="buttonId" onclick="buttonClick('hello 欢迎!')">点我!</button></div>
+
+        <div>
+            <img decoding="async" loading="lazy" id="pic_bulboff_img" onclick="changeImage()"
+                src="/images/pic_bulboff.gif" width="100" height="180">
+        </div>
+    </div>
+</body>
+
+</html>
